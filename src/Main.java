@@ -12,6 +12,7 @@ public class Main {
         System.out.println("Сотрудник с максимальной зарплатой: "+getEmployeeWithMaxSalary());
         System.out.println("Сотрудник с низкой зарплатой: "+getEmployeeWithMinSalary());
         System.out.println("средняя зарплата " + calculateSumSalary()/employees.length+ " рублей");
+        System.out.println("Средняя зарплата "+mSalary()+" рублей");
         for (int i=0; i<employees.length; i++) {
             System.out.println(employees[i]);
         }
@@ -51,6 +52,19 @@ public class Main {
             }
         }
         return targetEmployee;
+    }
+    public static int mSalary() {
+        int sum = 0;
+        int counter = 0;
+        for (Employee employee : employees) {
+            if (employee != null) {
+                sum += employee.getSalary();
+                counter++;
+            }
+
+        }
+        return sum / counter;
+
     }
 
 }
